@@ -1,16 +1,6 @@
-import localFont from "next/font/local";
+/* layout maneja toda la configuracion de estilos de la página */
 import "./globals.css";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import { inter } from "./config/fonts";
 
 export const metadata = {
   title: "Create Next App",
@@ -20,7 +10,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>{children}</body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

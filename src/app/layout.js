@@ -1,6 +1,6 @@
 /* layout maneja toda la configuracion de estilos de la página */
-import "./css/globals.css";
-import { inter } from "./config/fonts";
+import "../css/globals.css";
+import { inter } from "../config/fonts";
 
 export const metadata = {
   title: "Fuddplan",

@@ -1,21 +1,24 @@
 """ calculadora de IMC """
 
+
 class User:
     def __init__(self):
         self.peso_del_usuario = 0
         self.estatura_del_usuario = 0
 
-    def datos_de_usuario (self):
+    def datos_de_usuario(self):
         """ esta funcion captura los datos del usuario """
         self.peso_del_usuario = float(input('¿Cuál es tu peso actual en kg? '))
-        self.estatura_del_usuario = float(input('¿Cuál es tu estatura en metros? (ejemplo 1.75) '))
+        self.estatura_del_usuario = float(
+            input('¿Cuál es tu estatura en metros? (ejemplo 1.75) '))
 
     def calcular_imc(self):
         """ esta funcion obtiene el dato de peso y altura del usuario """
-        imc_del_usuario = self.peso_del_usuario / (self.estatura_del_usuario ** 2)
-        return round(imc_del_usuario,1)
+        imc_del_usuario = self.peso_del_usuario / \
+            (self.estatura_del_usuario ** 2)
+        return round(imc_del_usuario, 1)
 
-    def definir_rango_salud (self, imc):
+    def definir_rango_salud(self, imc):
         """ esta funcion clasifica al usuario en un rango de salud"""
         if imc < 18.5:
             return 'bajo peso'
@@ -30,7 +33,7 @@ class User:
         elif imc > 40:
             return 'obecidad grado 3'
         else:
-            return 'ocurrio un error intenta nuevamente'
+            return 'tu rango esta fuera de los límites'
 
 
 usuario = User()

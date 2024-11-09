@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const DatosPersonales = () => {
   const [nombre, setNombre] = useState("");
@@ -7,6 +8,12 @@ const DatosPersonales = () => {
   const [email, setEmail] = useState("");
   const [edad, setEdad] = useState("");
   const [sexo, setSexo] = useState("");
+
+  const router = useRouter();
+
+  const irAlSiguientePaso = () => {
+    router.push("/step-2");
+  };
 
   const handleOptionChange = (e) => {
     setSexo(e.target.value);
@@ -28,6 +35,7 @@ const DatosPersonales = () => {
       if (response.ok) {
         const result = await response.json();
         console.log("Datos enviados:", result);
+        irAlSiguientePaso();
       } else {
         console.log("Error al enviar datos");
       }

@@ -32,9 +32,12 @@ def obtener_datos_personales():
     nombre = datos.get('nombre')
     apellidos = datos.get('apellidos')
     email = datos.get('email')
+    edad = datos.get('edad')
+    sexo = datos.get('sexo')
 
     # Crear un nuevo usuario (ajusta según tu modelo)
-    nuevo_usuario = User(nombre=nombre, apellidos=apellidos, email=email)
+    nuevo_usuario = User(nombre=nombre, apellidos=apellidos,
+                         email=email, edad=edad, sexo=sexo)
     db.session.add(nuevo_usuario)
     db.session.commit()
 

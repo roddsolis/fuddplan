@@ -8,3 +8,5 @@ class User(db.Model):
     nombre = db.Column(db.String(120), nullable=False)
     apellidos = db.Column(db.String(120), nullable=False)
     email = db.Column(db.String(120), nullable=False, unique=True)
+    edad = db.Column(db.Integer, nullable=False, unique=True, default=0)
+    sexo = db.Column(db.String(120), nullable=False, unique=True, )

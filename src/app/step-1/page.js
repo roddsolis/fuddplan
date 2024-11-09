@@ -6,12 +6,15 @@ const DatosPersonales = () => {
   const [apellidos, setApellidos] = useState("");
   const [email, setEmail] = useState("");
   const [edad, setEdad] = useState("");
-  const [mujer, setMujer] = useState("");
-  const [hombre, setHombre] = useState("");
+  const [sexo, setSexo] = useState("");
+
+  const handleOptionChange = (e) => {
+    setSexo(e.target.value);
+  };
 
   const enviarDatos = async (e) => {
     e.preventDefault();
-    const datos = { nombre, apellidos, email, edad, mujer, hombre };
+    const datos = { nombre, apellidos, email, edad, sexo };
 
     try {
       const response = await fetch("http://localhost:5000/user_data", {
@@ -56,11 +59,11 @@ const DatosPersonales = () => {
         </label>
         <label htmlFor="mujer">
           Mujer
-          <input type="radio" name="mujer" id="mujer" value={mujer} onChange={(e) => setMujer(e.target.value)} />
+          <input type="radio" name="sexo" id="mujer" value="mujer" onChange={handleOptionChange} checked={sexo === "mujer"} />
         </label>
         <label htmlFor="hombre">
           Hombre
-          <input type="radio" name="hombre" id="hombre" value={hombre} onChange={(e) => setHombre(e.target.value)} />
+          <input type="radio" name="sexo" id="hombre" value="hombre" onChange={handleOptionChange} checked={sexo === "hombre"} />
         </label>
 
         <button type="submit">Enviar</button>

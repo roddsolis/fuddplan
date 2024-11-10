@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import useUserStore from "../useUserStore";
 
 const DatosPersonales = () => {
   const [nombre, setNombre] = useState("");
@@ -10,6 +11,7 @@ const DatosPersonales = () => {
   const [sexo, setSexo] = useState("");
 
   const router = useRouter();
+  const setNombreGlobal = useUserStore((state) => state.setNombre);
 
   const irAlSiguientePaso = () => {
     router.push("/step-2");
@@ -35,6 +37,7 @@ const DatosPersonales = () => {
       if (response.ok) {
         const result = await response.json();
         console.log("Datos enviados:", result);
+        setNombreGlobal(nombre);
         irAlSiguientePaso();
       } else {
         console.log("Error al enviar datos");

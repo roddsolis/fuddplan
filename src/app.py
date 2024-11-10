@@ -17,8 +17,9 @@ app.config['ENV'] = 'development'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASEURI')
 
-migrate = Migrate(app, db)
 db.init_app(app)
+migrate = Migrate(app, db)
+CORS(app, origins=["http://localhost:3000"])
 
 
 @app.route('/')

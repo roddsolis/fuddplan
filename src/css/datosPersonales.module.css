@@ -1,0 +1,34 @@
+.mainContainer {
+  /* background-color: aqua; */
+  height: 100vh;
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.textContainer {
+  /* background-color: bisque; */
+  grid-column: 4 / 9;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+.formContainer {
+  /* background-color: blue; */
+  grid-column: 4 / 9;
+  grid-row: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.textFieldContainer {
+  /* background-color: blueviolet; */
+  display: flex;
+  flex-direction: column;
+}

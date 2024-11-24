@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import useUserStore from "../useUserStore";
-import styles from "/src/css/DatosDeSalud.module.css";
+import styles from "@/css/datosDeSalud.module.css";
 
 const DatosDeSalud = () => {
   const nombre = useUserStore((state) => state.nombre);
